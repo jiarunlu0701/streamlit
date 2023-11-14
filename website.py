@@ -3,6 +3,7 @@ import json
 from openai import OpenAI
 import sqlite3
 from PIL import Image
+import os
 
 image = Image.open('sap.png')
 prompt_tokens = 0
@@ -13,7 +14,7 @@ newsletter_completion_tokens = 0
 newsletter_total_tokens_used = 0
 
 client = OpenAI(
-    api_key="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",
+    api_key=os.environ['OPENAI_API_KEY'],
 )
 def get_db_connection():
     conn = sqlite3.connect('chat_history.db')
