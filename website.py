@@ -13,7 +13,7 @@ newsletter_completion_tokens = 0
 newsletter_total_tokens_used = 0
 
 client = OpenAI(
-    api_key="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",
+    api_key="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",
 )
 def get_db_connection():
     conn = sqlite3.connect('chat_history.db')
