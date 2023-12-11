@@ -3,7 +3,6 @@ import json
 from openai import OpenAI
 import sqlite3
 from PIL import Image
-import os
 
 image = Image.open('sap.png')
 prompt_tokens = 0
