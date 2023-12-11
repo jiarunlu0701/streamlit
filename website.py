@@ -3,7 +3,7 @@ from PIL import Image
 from db import db
 from utils import utils
 from generate import generate
-from token_status import count
+from main import count
 
 db = db()
 utils = utils()
