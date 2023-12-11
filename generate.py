@@ -1,6 +1,8 @@
 from openai import OpenAI
 import streamlit as st
 from db import db
+db = db()
+
 client = OpenAI(
     api_key=st.secrets["openai_api_key"],
 )

@@ -2,6 +2,7 @@ import json
 from generate import generate
 import streamlit as st
 from db import db
+db = db()
 class utils:
     def markdown_copyable_text(self, role, message, max_line_length=80):
         def add_line_breaks(text, length):

@@ -1,4 +1,5 @@
 from db import db
+db = db()
 class count:
     def update_token_usage(self, prompt_tokens, completion_tokens, total_tokens):
         conn = db.get_db_connection()
