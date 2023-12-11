@@ -5,6 +5,11 @@ from utils import utils
 from generate import generate
 from token_status import count
 
+db = db()
+utils = utils()
+generate = generate()
+count = count()
+
 image = Image.open('assets/sap.png')
 prompt_tokens = 0
 completion_tokens = 0
