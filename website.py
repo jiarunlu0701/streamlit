@@ -18,7 +18,7 @@ def chat_page():
     st.header("SAP Digital School AI")
     question_input = st.text_area("Enter question", key="question_input")
     submit_button = st.button("Submit", key="submit_button")
-    latest_tokens = db.get_latest_token_usage()
+    latest_tokens = count.get_latest_token_usage()
     if latest_tokens:
         prompt_tokens, completion_tokens, total_tokens_used = latest_tokens['prompt_tokens'], latest_tokens[
             'completion_tokens'], latest_tokens['total_tokens']
