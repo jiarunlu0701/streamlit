@@ -15,14 +15,17 @@ count = count()
 
 with open('config.yaml') as file:
     config = yaml.load(file, Loader=SafeLoader)
+hashed_passwords = stauth.Hasher(['abc']).generate()
 
 authenticator = stauth.Authenticate(
     config['credentials'],
+    config['credentials'][hashed_passwords],
     config['cookie']['name'],
     config['cookie']['key'],
     config['cookie']['expiry_days'],
     config['preauthorized']
 )
+
 st.write(st.session_state["authentication_status"])
 authenticator.login('Login', 'main')
 if st.session_state["authentication_status"]:
