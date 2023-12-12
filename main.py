@@ -23,7 +23,7 @@ authenticator = stauth.Authenticate(
     config['cookie']['expiry_days'],
     config['preauthorized']
 )
-print(st.session_state["authentication_status"])
+st.write(st.session_state["authentication_status"])
 authenticator.login('Login', 'main')
 if st.session_state["authentication_status"]:
     authenticator.logout('Logout', 'main', key='unique_key')
@@ -33,7 +33,7 @@ elif st.session_state["authentication_status"] is False:
     st.error('Username/password is incorrect')
 elif st.session_state["authentication_status"] is None:
     st.warning('Please enter your username and password')
-print(st.session_state["authentication_status"])
+st.write(st.session_state["authentication_status"])
 
 image = Image.open('assets/sap.png')
 prompt_tokens = 0
