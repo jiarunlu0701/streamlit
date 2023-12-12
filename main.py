@@ -69,8 +69,10 @@ def readme():
     st.markdown("""
     - Ask AI to write a newsletter in simple words, include as much details as possible.
     
-    (example: I need to create a newsletter in English for AIGC bootcamp. The start date is 12/12/2023, and end date is 12/15/2023)
+    (example: I need to create a newsletter in English for AIGC bootcamp. The start date is 12/12/2023, and end date is 12/15/2023.
+     Can you do it for me?)
     """)
+
     st.subheader("How to improve the newsletter quality")
     st.markdown("""
     - Aside from more detailed input, you can ask AI to provide you an outline before actually writing the newsletter. And
@@ -80,13 +82,36 @@ def readme():
     write me an outline on how you going to draft it.)
     """)
 
+    st.subheader("How to let AI improves/modifies on top of the newsletter it generated")
+    st.markdown("""
+    - To let AI improves or modifies on the newsletter it generated, just tell it to modifies on the newsletter before.
+    
+    (examples: I like the previous newsletters you generated, can you modify it and change the start date to 12/13/2023.
+    """)
+
+    st.subheader("How to let AI generate pictures for the newsletter")
+    st.markdown("""
+    - To let AI generate pictures for the newsletter, you simply just ask the AI the number of pictures and the newsletter
+    it needs to generate pictures for. And AI will create it for you.
+
+    (examples: I need to create a newsletter in English for AIGC bootcamp. The start date is 12/12/2023, and end date is 12/15/2023.
+     Can you create two pictures for me to put in the newsletter?
+    """)
+
+    st.subheader("How to change the prompt")
+    st.markdown("""
+    Inside the "Prompt" Page, there are prompts/command inside which embedded inside the AI prompt system, it sets the tone,
+    and special pre-knowledge it needs to know for specific tasks it requires. Inside the "Prompt page", I have stored the previous 
+    newsletters for it to study so that it will follow the same format and tone to generate new newsletter. If you like, you can play around
+    and store your own prompts to match your specific needs of your own task.
+    """)
 with st.sidebar:
     st.image(image, use_column_width=True)
     st.header("SAP Digital School AI")
     # Navigation
     st.markdown("---")
     st.subheader("Navigation")
-    page = st.radio("Go to", ["Chat", "Prompt","How To Generate"])
+    page = st.radio("Go to", ["Chat", "Prompt","How To Use The Website"])
     # Button for clearing chat history
     clear_button = st.button('Clear Chat History and token counts', key='clear_history')
     if clear_button:
