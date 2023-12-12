@@ -3,11 +3,11 @@ credentials:
     jsmith:
       email: jsmith@gmail.com
       name: John Smith
-      password: hashed_password_abc
+      password: abc
     rbriggs:
       email: rbriggs@gmail.com
       name: Rebecca Briggs
-      password: hashed_password_def
+      password: def
 cookie:
   expiry_days: 30
   key: some_signature_key
