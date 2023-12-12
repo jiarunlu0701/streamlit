@@ -1,7 +1,4 @@
 import streamlit as st
-import streamlit_authenticator as stauth
-import yaml
-from yaml.loader import SafeLoader
 from PIL import Image
 from db import db
 from utils import utils
@@ -12,29 +9,6 @@ db = db()
 utils = utils()
 generate = generate()
 count = count()
-
-with open('config.yaml') as file:
-    config = yaml.load(file, Loader=SafeLoader)
-st.write(config)
-authenticator = stauth.Authenticate(
-    config['credentials'],
-    config['cookie']['name'],
-    config['cookie']['key'],
-    config['cookie']['expiry_days'],
-    config['preauthorized']
-)
-
-st.write(st.session_state["authentication_status"])
-authenticator.login('Login', 'main')
-if st.session_state["authentication_status"]:
-    authenticator.logout('Logout', 'main', key='unique_key')
-    st.write(f'Welcome *{st.session_state["name"]}*')
-    st.title('Some content')
-elif st.session_state["authentication_status"] is False:
-    st.error('Username/password is incorrect')
-elif st.session_state["authentication_status"] is None:
-    st.warning('Please enter your username and password')
-st.write(st.session_state["authentication_status"])
 
 image = Image.open('assets/sap.png')
 prompt_tokens = 0
