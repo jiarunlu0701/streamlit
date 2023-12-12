@@ -7,7 +7,7 @@ credentials:
     rbriggs:
       email: rbriggs@gmail.com
       name: Rebecca Briggs
-      password: hashed_password_abc
+      password: hashed_password_def
 cookie:
   expiry_days: 30
   key: some_signature_key

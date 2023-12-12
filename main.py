@@ -15,7 +15,7 @@ count = count()
 
 with open('config.yaml') as file:
     config = yaml.load(file, Loader=SafeLoader)
-hashed_passwords = stauth.Hasher(['abc']).generate()
+hashed_passwords = stauth.Hasher(['abc', 'def']).generate()
 
 authenticator = stauth.Authenticate(
     config['credentials'],
