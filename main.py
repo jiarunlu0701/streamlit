@@ -66,7 +66,8 @@ def prompt_page():
     if submit_button:
         db.save_prompt(question_input)
         st.experimental_rerun()
-
+def readme():
+    st.write('read me')
 with st.sidebar:
     st.image(image, use_column_width=True)
     st.header("SAP Digital School AI")
@@ -86,3 +87,5 @@ if page == "Chat":
     chat_page()
 elif page == "Prompt":
     prompt_page()
+else == page == 'Read Me':
+    readme()
