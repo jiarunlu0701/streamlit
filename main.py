@@ -87,5 +87,5 @@ if page == "Chat":
     chat_page()
 elif page == "Prompt":
     prompt_page()
-else == page == 'Read Me':
+else:
     readme()
