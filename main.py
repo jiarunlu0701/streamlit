@@ -67,13 +67,15 @@ def prompt_page():
 def readme():
     st.subheader("Generate newsletter")
     st.markdown("""
-    - Ask AI to write a newsletter in simple words, include as much details as possible.\
+    - Ask AI to write a newsletter in simple words, include as much details as possible.
+    
     (example: I need to create a newsletter in English for AIGC bootcamp. The start date is 12/12/2023, and end date is 12/15/2023)
     """)
     st.subheader("How to improve the newsletter quality")
     st.markdown("""
     - Aside from more detailed input, you can ask AI to provide you an outline before actually writing the newsletter. And
-    modify the outline first, so that you two can have a better understanding of each others' idea.\
+    modify the outline first, so that you two can have a better understanding of each others' idea.
+    
     (example: I need to create a newsletter in English for AIGC bootcamp. The start date is 12/12/2023, and end date is 12/15/2023,
     write me an outline on how you going to draft it.)
     """)
