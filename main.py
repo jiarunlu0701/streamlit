@@ -19,7 +19,6 @@ hashed_passwords = stauth.Hasher(['abc', 'def']).generate()
 
 authenticator = stauth.Authenticate(
     config['credentials'],
-    config['credentials'],
     config['cookie']['name'],
     config['cookie']['key'],
     config['cookie']['expiry_days'],
