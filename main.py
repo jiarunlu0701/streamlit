@@ -54,7 +54,6 @@ def chat_page():
             st.experimental_rerun()
         else:
             st.error("No response from the AI. Please try again.")
-
 def prompt_page():
     st.header("Prompt Page")
     latest_prompt = db.get_latest_prompt()
@@ -68,13 +67,14 @@ def prompt_page():
         st.experimental_rerun()
 def readme():
     st.write('read me')
+
 with st.sidebar:
     st.image(image, use_column_width=True)
     st.header("SAP Digital School AI")
     # Navigation
     st.markdown("---")
     st.subheader("Navigation")
-    page = st.radio("Go to", ["Chat", "Prompt"])
+    page = st.radio("Go to", ["Chat", "Prompt","Read Me"])
     # Button for clearing chat history
     clear_button = st.button('Clear Chat History and token counts', key='clear_history')
     if clear_button:
