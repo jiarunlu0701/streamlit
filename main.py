@@ -41,7 +41,7 @@ def chat_page():
         if response:
             db.add_chat("User", question_input)
             if response.choices[0].message.tool_calls:
-                utils.handle_response(response.choices[0].message.tool_calls,question_input)
+                utils.handle_response(response.choices[0].message.tool_calls)
             else:
                 chat_content = response.choices[0].message.content
                 db.add_chat("SAP Digital School AI", chat_content)

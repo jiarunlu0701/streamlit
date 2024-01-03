@@ -36,7 +36,7 @@ class utils:
                 question_input, num = arguments_dict.get('question_input'), arguments_dict.get('num')
                 response_img = generate.make_image(question_input, num)
                 if response_img:
-                    generate.display_images(response_img)
+                    self.display(response_img)
             elif function_name == 'generate_newsletter':
                 question_input, switch = arguments_dict.get('question_input'), arguments_dict.get('Switch')
                 newsletter_response = generate.generate_newsletter(switch, question_input)
