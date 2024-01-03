@@ -1,4 +1,5 @@
 import streamlit as st
+import json
 from PIL import Image
 from db import db
 from utils import utils
@@ -38,11 +39,15 @@ def chat_page():
     utils.display_chat_history()
     if submit_button and question_input:
         response = generate.make_request(question_input)
-        print(response)
         if response:
             db.add_chat("User", question_input)
             if response.choices[0].message.tool_calls:
-                utils.handle_response(response.choices[0].message.tool_calls)
+                tool_calls = response.choices[0].message.tool_calls
+                for tool_call in tool_calls:
+                    function_name = tool_call.function.name
+                    arguments_dict = json.loads(tool_call.function.arguments)
+                    st.write(arguments_dict)
+                    st.write(function_name)
             else:
                 chat_content = response.choices[0].message.content
                 db.add_chat("SAP Digital School AI", chat_content)

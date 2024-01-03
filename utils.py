@@ -1,5 +1,4 @@
 import json
-from openai import OpenAI
 from generate import generate
 import streamlit as st
 from db import db
