@@ -54,7 +54,7 @@ class generate:
         }
     ]
 
-    def make_image(self, question_input, num):
+    def make_image(question_input, num):
         try:
             response = client.images.generate(
                 model="dall-e-2",
