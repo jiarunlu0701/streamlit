@@ -39,6 +39,7 @@ class utils:
                     generate.display_images(response_img)
             elif function_name == 'generate_newsletter':
                 question_input, Switch = arguments_dict.get('question_input'), arguments_dict.get('Switch')
+                print(question_input,Switch)
                 newsletter_response = generate.generate_newsletter(Switch, question_input)
                 if newsletter_response:
                     newsletter_content = newsletter_response.choices[0].message.content
