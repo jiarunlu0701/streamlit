@@ -38,8 +38,8 @@ class utils:
                 if response_img:
                     generate.display_images(response_img)
             elif function_name == 'generate_newsletter':
-                question_input, switch = arguments_dict.get('question_input'), arguments_dict.get('Switch')
-                newsletter_response = generate.generate_newsletter(switch, question_input)
+                question_input, Switch = arguments_dict.get('question_input'), arguments_dict.get('Switch')
+                newsletter_response = generate.generate_newsletter(Switch, question_input)
                 if newsletter_response:
                     newsletter_content = newsletter_response.choices[0].message.content
                     newsletter_prompt_tokens = newsletter_response.usage.prompt_tokens
