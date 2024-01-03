@@ -68,7 +68,7 @@ class generate:
             st.error(f"An error occurred while generating images: {e}")
             return None
 
-    def generate_newsletter(self, Switch, question_input):
+    def generate_newsletter(Switch, question_input):
         if Switch == 'True':
             latest_prompt = db.get_latest_prompt()
             if latest_prompt:

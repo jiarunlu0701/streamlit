@@ -32,7 +32,6 @@ class utils:
         for tool_call in tool_calls:
             function_name = tool_call.function.name
             arguments_dict = json.loads(tool_call.function.arguments)
-            st.write(arguments_dict)
             if function_name == 'make_image':
                 question_input, num = arguments_dict.get('question_input'), arguments_dict.get('num')
                 response_img = generate.make_image(question_input, num)
