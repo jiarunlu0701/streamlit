@@ -27,7 +27,7 @@ class utils:
         markdown_text = f"```\n{formatted_message}\n```"
         st.markdown(markdown_text)
 
-    def handle_response(self, tool_calls):
+    def handle_response(self, tool_calls,question_input):
         global newsletter_prompt_tokens, newsletter_completion_tokens, newsletter_total_tokens_used
         for tool_call in tool_calls:
             function_name = tool_call.function.name
@@ -39,8 +39,7 @@ class utils:
                 if response_img:
                     generate.display_images(response_img)
             elif function_name == 'generate_newsletter':
-                question_input, Switch = arguments_dict.get('question_input'), arguments_dict.get('Switch')
-                print(question_input,Switch)
+                Switch =  arguments_dict.get('Switch')
                 newsletter_response = generate.generate_newsletter(Switch, question_input)
                 if newsletter_response:
                     newsletter_content = newsletter_response.choices[0].message.content
