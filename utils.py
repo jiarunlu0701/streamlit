@@ -27,7 +27,7 @@ class utils:
         markdown_text = f"```\n{formatted_message}\n```"
         st.markdown(markdown_text)
 
-    def handle_response(self, tool_calls,question_input):
+    def handle_response(self, tool_calls):
         global newsletter_prompt_tokens, newsletter_completion_tokens, newsletter_total_tokens_used
         for tool_call in tool_calls:
             function_name = tool_call.function.name
