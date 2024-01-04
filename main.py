@@ -38,6 +38,7 @@ def chat_page():
     utils.display_chat_history()
     if submit_button and question_input:
         response = generate.make_request(question_input)
+        st.write(response)
         if response:
             db.add_chat("User", question_input)
             if response.choices[0].message.tool_calls:
